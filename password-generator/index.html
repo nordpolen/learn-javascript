@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Password Generator</title>
+    <!-- Tailwind CSS CDN for simple styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 flex flex-col items-center justify-center h-screen">
+    <h1 class="text-gray-100 text-2xl font-bold mb-4">🔒 Password Generator 🔒</h1>
+
+    <!-- This will show the password -->
+    <input type="text" id="password" readonly class="bg-gray-800 border-gray-700 border-2 p-2 rounded w-80 mb-3 text-center text-white">
+
+    <!-- Button to generate password -->
+    <button id="generate" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-500">
+        Generate password
+    </button>
+
+    <!-- JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
