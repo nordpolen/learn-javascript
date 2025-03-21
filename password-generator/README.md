@@ -22,4 +22,6 @@ This project is a simple password generator written in JavaScript. It allows use
 
 3. Use the provided interface to set your desired password criteria and generate a password.
 
-## Example
+## 📧 Contact
+
+For any questions or suggestions, feel free to reach out to [contact@josefinanord.se](mailto:contact@josefinanord.se).

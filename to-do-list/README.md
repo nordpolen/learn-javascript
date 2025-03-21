@@ -26,3 +26,7 @@ Open `index.html` in your web browser to start using the To Do List application.
 ## Contributing
 
 Feel free to submit issues or pull requests if you have any suggestions or improvements.
+
+## 📧 Contact
+
+For any questions or suggestions, feel free to reach out to [contact@josefinanord.se](mailto:contact@josefinanord.se).

@@ -50,4 +50,8 @@ Here are some ideas for projects I will add to this repository:
 
 Each project comes with its own README file containing detailed instructions and explanations.
 
+## 📧 Contact
+
+For any questions or suggestions, feel free to reach out to [contact@josefinanord.se](mailto:contact@josefinanord.se).
+
 Happy coding!

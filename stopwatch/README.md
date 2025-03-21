@@ -19,4 +19,6 @@ The `reset` function resets the stopwatch. It clears the elapsed time and prepar
 2. **Stop the Stopwatch**: Call the `stop` function to pause the timing.
 3. **Reset the Stopwatch**: Call the `reset` function to clear the time and reset the stopwatch.
 
-## Example
+## 📧 Contact
+
+For any questions or suggestions, feel free to reach out to [contact@josefinanord.se](mailto:contact@josefinanord.se).
