@@ -10,7 +10,7 @@ Welcome to the Learn JavaScript repository! This repository is designed to help 
 
 ## Introduction
 
-JavaScript is a versatile and powerful programming language used for web development. This repository contains a collection of projects that will help you understand and master JavaScript concepts in an engaging way.
+JavaScript is a versatile and powerful programming language used for web development. This repository contains a collection of projects that will help you understand and master JavaScript concepts in an engaging way. Additionally, Tailwind CSS is used for styling purposes to make the projects visually appealing and to help you learn how to integrate CSS frameworks into your JavaScript projects.
 
 ## Getting Started
 
