@@ -5,7 +5,7 @@ This is a simple stopwatch application built using JavaScript. It includes three
 ## Functions
 
 ### Start
-The `start` function begins the stopwatch. It records the current time and starts counting milliseconds.
+The `start` function begins the stopwatch. It records the current time and starts counting seconds.
 
 ### Stop
 The `stop` function pauses the stopwatch. It calculates the elapsed time since the stopwatch was started and stops the counting.

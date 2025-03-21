@@ -6,10 +6,10 @@ This project is a simple password generator written in JavaScript. It allows use
 
 - Generate random passwords
 - Customize password length
-- Include or exclude uppercase letters
-- Include or exclude lowercase letters
-- Include or exclude numbers
-- Include or exclude special characters
+- Include or exclude uppercase letters (not implemented yet)
+- Include or exclude lowercase letters (not implemented yet)
+- Include or exclude numbers (not implemented yet)
+- Include or exclude special characters (not implemented yet)
 
 ## Usage
 
