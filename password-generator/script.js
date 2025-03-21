@@ -1,6 +1,8 @@
 // Get the elements from the HTML
 const generateButton = document.getElementById('generate');
 const passwordDisplay = document.getElementById('password');
+const lengthInput = document.getElementById('length');
+const copyButton = document.getElementById('copy');
 
 // Allowed characters for the password
 const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()';
@@ -20,6 +22,19 @@ function generatePassword(length) {
 
 // Add an event listener to the generate button
 generateButton.addEventListener('click', function () {
-    let newPassword = generatePassword(12);
+    const length = parseInt(lengthInput.value, 10) || 12;
+    const newPassword = generatePassword(length);
     passwordDisplay.value = newPassword;
+});
+
+copyButton.addEventListener('click', function () {
+    const password = passwordDisplay.value;
+    if (!password) return;
+
+    navigator.clipboard.writeText(password).then(() => {
+        copyButton.textContent = '✅';
+        setTimeout(() => copyButton.textContent = '📋', 1500);
+    }).catch(() => {
+        alert('Kunde inte kopiera lösenordet.');
+    });
 });

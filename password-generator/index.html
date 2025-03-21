@@ -9,8 +9,20 @@
 <body class="bg-gray-900 flex flex-col items-center justify-center h-screen">
     <h1 class="text-gray-100 text-2xl font-bold mb-4">🔒 Password Generator 🔒</h1>
 
-    <!-- This will show the password -->
-    <input type="text" id="password" readonly class="bg-gray-800 border-gray-700 border-2 p-2 rounded w-80 mb-3 text-center text-white">
+    <!-- This will show the password
+    <input type="text" id="password" readonly class="bg-gray-800 border-gray-700 border-2 p-2 rounded w-80 mb-3 text-center text-white"> -->
+    <!-- Password display + copy button -->
+    <div class="flex items-center space-x-2 mb-3">
+        <input type="text" id="password" readonly class="bg-gray-800 border-gray-700 border-2 p-2 rounded w-72 text-center text-white">
+        <button id="copy" class="bg-gray-700 text-white px-2 py-1 rounded hover:bg-gray-600">
+            📋
+        </button>
+    </div>
+
+
+    <!-- Input for password length -->
+    <label for="length" class="text-white mb-1">Password length:</label>
+    <input type="number" id="length" min="4" max="128" value="12" class="bg-gray-800 border-gray-700 border-2 p-2 rounded w-20 mb-4 text-center text-white">
 
     <!-- Button to generate password -->
     <button id="generate" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-500">
