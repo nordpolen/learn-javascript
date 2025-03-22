@@ -28,13 +28,13 @@ To get started with the projects in this repository, follow these steps:
 
 ## Projects
 Here are some of the projects you will find in this repository:
-1. **Project 1: Password Generator**
+1. **[Project 1: Password Generator](./password-generator)**
    - Learn basic JavaScript operations by creating a password generator.
 
-2. **Project 2: To-Do List**
+2. **[Project 2: To-Do List](./to-do-list)**
    - Understand DOM manipulation by creating a dynamic to-do list.
 
-3. **Project 3: Stopwatch**
+3. **[Project 3: Stopwatch](./stopwatch/)**
     - Create a simple stopwatch using JavaScript to understand timing events and DOM manipulation.
 
 Here are some ideas for projects I will add to this repository:
