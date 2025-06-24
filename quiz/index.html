@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Josefina's Quiz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Bungee', sans-serif;
+      margin: 2rem;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      text-align: center;
+      color: #5a189a;
+      text-shadow: 3px 3px 0 #000, 5px 5px 0 #333;
+      margin-bottom: 1rem;
+      animation: popIn 1s ease-out;
+    }
+
+    @keyframes popIn {
+      0% {
+        transform: scale(0.5) rotate(-5deg);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+      }
+    }
+
+    fieldset {
+      border: 1px solid #ccc;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      border-radius: 6px;
+      background-color: #fff;
+    }
+
+    fieldset legend {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 1.2rem;
+    }
+
+    label span {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 0.3rem;
+    }
+
+    input[type="text"],
+    input[type="email"] {
+      width: 100%;
+      padding: 0.5rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background-color: #fefefe;
+      box-sizing: border-box;
+    }
+
+    input[type="text"].error-field,
+    input[type="email"].error-field {
+      border: 2px solid red !important;
+      background-color: #ffeaea !important;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+      accent-color: #5a189a;
+      border-radius: 4px;
+      transform: scale(1.2);
+      margin-right: 0.5rem;
+    }
+
+
+    .field-error {
+      color: red;
+      font-size: 0.9rem;
+      margin-top: 4px;
+      display: none;
+    }
+
+    input.error-field ~ .field-error {
+      display: block;
+    }
+
+    .required span::after {
+      content: " *";
+      color: red;
+    }
+
+    .success {
+      background-color: #d4f8d4;
+      border: 2px solid #87e987;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 0 12px #87e987;
+    }
+
+    .error {
+      background-color: #ffdede;
+      border: 2px solid red;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 0 12px red;
+    }
+
+    button {
+      padding: 0.6rem 1.2rem;
+      background-color: #5a189a;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1.2rem;
+      font-weight: bold;
+      transition: transform 0.2s ease, background-color 0.3s ease;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+    }
+
+    .correct-answers {
+      margin-top: 1rem;
+      background-color: #e0ffe0;
+      padding: 1rem;
+      border-radius: 5px;
+    }
+
+    .correct-answers code.correct {
+      background: #87e987;
+      color: #103910;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+
+    .correct-answers code.wrong {
+      background: #f8d7da;
+      color: #721c24;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+
+    .tooltip-icon {
+      position: relative;
+      display: inline-block;
+      vertical-align: middle;
+      cursor: pointer;
+      font-size: 0.9rem;
+      margin-left: 0.5rem;
+      background-color: #222222;
+      color: #000;
+      border-radius: 50%;
+      width: 1.2rem;
+      height: 1.2rem;
+      line-height: 1.2rem;
+      text-align: center;
+      font-weight: bold;
+      transition: background-color 0.2s ease;
+    }
+
+    .tooltip-icon:hover,
+    .tooltip-icon:focus {
+      background-color: #222222;
+    }
+
+    .tooltip-icon .tooltip-text {
+      visibility: hidden;
+      width: 250px;
+      background-color: #222222;
+      color: #fff;
+      text-align: left;
+      border-radius: 6px;
+      padding: 0.5rem;
+      position: absolute;
+      z-index: 1;
+      bottom: 125%;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      font-size: 0.9rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    .tooltip-icon:hover .tooltip-text,
+    .tooltip-icon:focus .tooltip-text {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>
+
+
+</head>
+<body>
+  <h1>Let's Play</h1>
+
+  <form id="quizForm" novalidate>
+    <fieldset>
+      <legend>📝 Personal Information</legend>
+
+      <label class="required">
+        <span>First Name</span>
+        <input type="text" id="firstName" required>
+        <div class="field-error" id="firstNameError"></div>
+      </label>
+
+      <label class="required">
+        <span>Last Name</span>
+        <input type="text" id="lastName" required>
+        <div class="field-error" id="lastNameError"></div>
+      </label>
+
+      <label class="required">
+        <span>Email</span>
+        <input type="email" id="email" required>
+        <div class="field-error" id="emailError"></div>
+      </label>
+    </fieldset>
+
+
+    <fieldset>
+      <legend>🎲 Quiz Questions</legend>
+
+      <div class="question-block">
+        <p class="question-title">What year was the original PlayStation released?</p>
+        <label><input type="radio" name="q1" value="1992"> 1992</label><br>
+        <label><input type="radio" name="q1" value="1994"> 1994</label><br>
+        <label><input type="radio" name="q1" value="1996"> 1996</label><br>
+      </div>
+
+      <div class="question-block">
+        <p class="question-title">Which of these are characters from the <em>Super Smash Bros.</em> series?</p>
+        <label><input type="checkbox" name="q2[]" value="Pikachu"> Pikachu</label><br>
+        <label><input type="checkbox" name="q2[]" value="Lara Croft"> Lara Croft</label><br>
+        <label><input type="checkbox" name="q2[]" value="Mario"> Mario</label><br>
+        <label><input type="checkbox" name="q2[]" value="Kratos"> Kratos</label><br>
+      </div>
+
+      <div class="question-block">
+        <p class="question-title">Name the video game series that features the character 'Link'.</p>
+        <input type="text" name="q3" id="q3">
+      </div>
+
+      <div class="question-block">
+        <p class="question-title">Which company owns the Xbox brand?</p>
+        <label><input type="radio" name="q4" value="Sony"> Sony</label><br>
+        <label><input type="radio" name="q4" value="Microsoft"> Microsoft</label><br>
+        <label><input type="radio" name="q4" value="Nintendo"> Nintendo</label><br>
+      </div>
+
+      <div class="question-block">
+        <p class="question-title">Which of the following are battle royale games?</p>
+        <label><input type="checkbox" name="q5[]" value="Fortnite"> Fortnite</label><br>
+        <label><input type="checkbox" name="q5[]" value="League of Legends"> League of Legends</label><br>
+        <label><input type="checkbox" name="q5[]" value="PUBG"> PUBG</label><br>
+        <label><input type="checkbox" name="q5[]" value="Overwatch"> Overwatch</label><br>
+      </div>
+
+      <div class="question-block">
+        <p class="question-title">What is the name of the virtual world in <em>Minecraft</em> where you fight the Ender Dragon?</p>
+        <input type="text" name="q6" id="q6">
+      </div>
+
+      <div class="question-block">
+        <p class="question-title">In which game would you find the character <em>Geralt of Rivia</em>?</p>
+        <label><input type="radio" name="q7" value="Skyrim"> Skyrim</label><br>
+        <label><input type="radio" name="q7" value="The Witcher 3"> The Witcher 3</label><br>
+        <label><input type="radio" name="q7" value="Elden Ring"> Elden Ring</label><br>
+      </div>
+
+      <div class="question-block">
+        <p class="question-title">Which of the following games are indie titles?</p>
+        <label><input type="checkbox" name="q8[]" value="Hollow Knight"> Hollow Knight</label><br>
+        <label><input type="checkbox" name="q8[]" value="Celeste"> Celeste</label><br>
+        <label><input type="checkbox" name="q8[]" value="Call of Duty"> Call of Duty</label><br>
+        <label><input type="checkbox" name="q8[]" value="Stardew Valley"> Stardew Valley</label><br>
+      </div>
+
+      <div class="question-block">
+        <p class="question-title">What is the name of the ring-based battle arena in <em>Apex Legends</em>?</p>
+        <input type="text" name="q9" id="q9">
+      </div>
+
+      <div class="question-block">
+        <p class="question-title">What is the name of the princess in <em>The Legend of Zelda</em>?</p>
+        <label><input type="radio" name="q10" value="Zelda"> Zelda</label><br>
+        <label><input type="radio" name="q10" value="Peach"> Peach</label><br>
+        <label><input type="radio" name="q10" value="Rosalina"> Rosalina</label><br>
+      </div>
+
+    </fieldset>
+
+    <p id="message"></p>
+    <div id="scoreDisplay"></div>
+    <div id="correctAnswers" class="correct-answers" style="display:none;"></div>
+    <button type="submit">Submit</button>
+  </form>
+
+  <div id="result"></div>
+  <script src="script.js"></script>
+</body>
+</html>
