@@ -1,48 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Stopwatch</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8" />
+  <title>Stopwatch</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
 
-    <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
-    <link rel="shortcut icon" href="/favicon/favicon.ico" />
-    <link rel="manifest" href="/favicon/site.webmanifest" />
-
+  <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon/favicon.ico" />
+  <link rel="manifest" href="/favicon/site.webmanifest" />
 </head>
-<body class="bg-gray-900 flex flex-col items-center justify-center h-screen">
-    <h1 class="text-3xl font-bold mb-6 text-gray-100">⏱️ Stopwatch ⏱️</h1>
+<body class="bg-gray-900 flex flex-col items-center justify-center min-h-screen px-4">
+  <h1 class="text-3xl font-bold mb-6 text-gray-100 text-center">⏱️ Stopwatch ⏱️</h1>
 
-    <!-- Displaying the time -->
-    <div id="display" class="text-4xl font-mono text-gray-200 mb-6">
-        00:00:00
-    </div>
+  <!-- Displaying the time -->
+  <div id="display" class="text-4xl font-mono text-gray-200 mb-6">
+    00:00:00
+  </div>
 
-    <!-- Buttons -->
-    <div class="space-x-3">
-        <button id="startBtn" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-500">
-            Start
-        </button>
-        <button id="stopBtn" class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-500">
-            Stop
-        </button>
-        <button id="resetBtn" class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-400">
-            Reset
-        </button>
-    </div>
+  <!-- Buttons -->
+  <div class="flex flex-col sm:flex-row gap-3 w-full max-w-xs justify-center">
+    <button id="startBtn" class="w-full sm:w-auto bg-green-600 text-white px-4 py-2 rounded hover:bg-green-500">
+      Start
+    </button>
+    <button id="stopBtn" class="w-full sm:w-auto bg-red-600 text-white px-4 py-2 rounded hover:bg-red-500">
+      Stop
+    </button>
+    <button id="resetBtn" class="w-full sm:w-auto bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-400">
+      Reset
+    </button>
+  </div>
 
-    <!-- JavaScript file -->
-    <script src="script.js"></script>
+  <!-- JavaScript file -->
+  <script src="script.js"></script>
 
-    <footer class="mt-6 text-sm text-gray-400 text-center">
-        <p>
-            Made by <a href="https://www.josefinanord.se" class="text-blue-400 hover:underline">Josefina Nord</a> · 
-            <a href="https://github.com/nordpolen" class="text-blue-400 hover:underline">GitHub</a> · 
-            <a href="https://www.linkedin.com/in/josefina-nord" class="text-blue-400 hover:underline">LinkedIn</a>
-        </p>
-    </footer>
-
+  <footer class="mt-6 text-sm text-gray-400 text-center px-4">
+    <p>
+      Made by <a href="https://www.josefinanord.se" class="text-blue-400 hover:underline">Josefina Nord</a> ·
+      <a href="https://github.com/nordpolen" class="text-blue-400 hover:underline">GitHub</a> ·
+      <a href="https://www.linkedin.com/in/josefina-nord" class="text-blue-400 hover:underline">LinkedIn</a>
+    </p>
+  </footer>
 </body>
 </html>
