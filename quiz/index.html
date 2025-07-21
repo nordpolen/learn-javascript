@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Josefina's Quiz</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
   <style>
     body {
@@ -80,7 +81,6 @@
       transform: scale(1.2);
       margin-right: 0.5rem;
     }
-
 
     .field-error {
       color: red;
@@ -202,10 +202,47 @@
       visibility: visible;
       opacity: 1;
     }
+
+    /* 👇 MOBILRESPONSIVITET */
+    @media (max-width: 600px) {
+      body {
+        margin: 1rem;
+        font-size: 0.95rem;
+      }
+
+      h1 {
+        font-size: 2rem;
+        text-align: center;
+        text-shadow: 2px 2px 0 #000, 3px 3px 0 #333;
+      }
+
+      fieldset {
+        padding: 1rem;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      .question-block input[type="text"] {
+        width: 100%;
+        font-size: 1rem;
+      }
+
+      button {
+        width: 100%;
+        font-size: 1rem;
+        padding: 0.8rem 1rem;
+      }
+
+      .tooltip-icon .tooltip-text {
+        width: 90vw;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 150%;
+      }
+    }
   </style>
-
-
 </head>
+
 <body>
   <h1>Let's Play</h1>
 
@@ -305,6 +342,7 @@
 
     </fieldset>
 
+    <!-- Resultat + knappen -->
     <p id="message"></p>
     <div id="scoreDisplay"></div>
     <div id="correctAnswers" class="correct-answers" style="display:none;"></div>
@@ -321,6 +359,5 @@
       <a href="https://www.linkedin.com/in/josefina-nord" style="color: #5a189a; text-decoration: underline;">LinkedIn</a>
     </p>
   </footer>
-  
 </body>
 </html>
