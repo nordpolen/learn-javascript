@@ -1,52 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>To Do List</title>
+  <meta charset="UTF-8" />
+  <title>To Do List</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
 
-    <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+    body {
+      font-family: 'Press Start 2P', cursive;
+    }
+  </style>
 
-    <!-- <link href="style.css" rel="stylesheet"> -->
-
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-        body {
-            font-family: 'Press Start 2P', cursive;
-        }
-    </style>
-
-    <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
-    <link rel="shortcut icon" href="/favicon/favicon.ico" />
-    <link rel="manifest" href="/favicon/site.webmanifest" />
-
+  <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon/favicon.ico" />
+  <link rel="manifest" href="/favicon/site.webmanifest" />
 </head>
-<body class="bg-pink-200 min-h-screen flex flex-col items-center p-6">
-    <h1 class="text-2xl text-pink-600 mb-4 drop-shadow-lg">💖 To Do List 💖</h1>
-    
-    <div class="w-full max-w-lg">
-        <input type="text" id="taskInput" placeholder="Enter a task..."
-            class="w-full p-2 rounded-xl border-2 border-pink-400 bg-pink-50 text-pink-700 placeholder-pink-400 mb-3">
 
-        <button id="addTask"
-            class="w-full py-2 bg-pink-500 hover:bg-pink-600 text-white rounded-xl shadow-lg">
-            ✨ Add task ✨
-        </button>
-    </div>
-    
-    <ul id="taskList" class="w-full max-w-lg mt-6">
-        <!-- Tasks will be added here -->
-    </ul>
+<body class="bg-pink-200 min-h-screen flex flex-col items-center p-4 sm:p-6">
+  <h1 class="text-xl sm:text-2xl text-pink-600 mb-4 drop-shadow-lg text-center">
+    💖 To Do List 💖
+  </h1>
 
-    <script src="script.js"></script>
+  <div class="w-full max-w-lg">
+    <input
+      type="text"
+      id="taskInput"
+      placeholder="Enter a task..."
+      class="w-full p-3 rounded-xl border-2 border-pink-400 bg-pink-50 text-pink-700 placeholder-pink-400 mb-3 text-xs sm:text-sm"
+    />
 
-    <footer class="mt-8 text-sm text-pink-700 text-center">
-        <p>
-            Made by <a href="https://www.josefinanord.se" class="underline hover:text-pink-900">Josefina Nord</a> · 
-            <a href="https://github.com/nordpolen" class="underline hover:text-pink-900">GitHub</a> · 
-            <a href="https://www.linkedin.com/in/josefina-nord" class="underline hover:text-pink-900">LinkedIn</a>
-        </p>
-    </footer>
+    <button
+      id="addTask"
+      class="w-full py-3 bg-pink-500 hover:bg-pink-600 text-white rounded-xl shadow-lg text-sm sm:text-base"
+    >
+      ✨ Add task ✨
+    </button>
+  </div>
 
+  <ul id="taskList" class="w-full max-w-lg mt-6">
+    <!-- Tasks will be added here -->
+  </ul>
+
+  <script src="script.js"></script>
+
+  <footer class="mt-8 text-xs sm:text-sm text-pink-700 text-center px-2">
+    <p>
+      Made by
+      <a href="https://www.josefinanord.se" class="underline hover:text-pink-900">Josefina Nord</a> ·
+      <a href="https://github.com/nordpolen" class="underline hover:text-pink-900">GitHub</a> ·
+      <a href="https://www.linkedin.com/in/josefina-nord" class="underline hover:text-pink-900">LinkedIn</a>
+    </p>
+  </footer>
 </body>
 </html>
